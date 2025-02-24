@@ -11,51 +11,77 @@ This project is a simple trading order management system built with FastAPI. It 
 - ☁ **AWS Deployment**: Automated CI/CD pipeline using GitHub Actions
 
 ## 🚀 How to Run Locally
+### ⬇ Clone and Install Dependencies
 ```bash
 git clone https://github.com/YOUR_GITHUB_USERNAME/backend-service.git
-cd backend-service
+cd backend
 pip install -r requirements.txt
+```
+### ▶ Run FastAPI Server
+```bash
 uvicorn backend.main:app --reload
 ```
 
 Swagger UI: http://localhost:8000/docs
 
-🐛 Docker Usage
-
+## 🐳 Docker Usage
+### 🏗 Build Docker Image
+```bash
 docker build -t backend-service .
+```
+### ▶ Run Docker Container
+```bash
 docker run -p 8000:8000 backend-service
+```
 
-☁ CI/CD (Automatic Deployment)
+## ☁ CI/CD (Automatic Deployment)
 
 Whenever you git push to main, GitHub Actions will:
 
-Build & push a Docker image to Docker Hub
+1. Build & push a Docker image to Docker Hub
 
-SSH into AWS EC2, pull the latest image & restart the container
+2. SSH into AWS EC2, pull the latest image & restart the container
 
-📄 API Endpoints
 
-Method
+## 📄 API Endpoints
 
-Endpoint
+| Method | Endpoint  | Description |
+|--------|----------|-------------|
+| `POST` | `/orders` | Submit a new trade order |
+| `GET`  | `/orders` | Fetch all orders |
+| `WS`   | `/ws`     | Real-time order updates |
 
-Description
 
-POST
 
-/orders
+## 🚀 Deployment Steps
+1️⃣ Setup AWS EC2
 
-Submit a new trade order
+Launch an Ubuntu 20.04 instance
 
-GET
+Install Docker:
+```bash
+sudo apt update && sudo apt install -y docker.io
+```
 
-/orders
+2️⃣ Configure CI/CD
 
-Fetch all orders
+Add GitHub Secrets:
 
-WS
+DOCKER_USERNAME: Your Docker Hub username
 
-/ws
+DOCKER_PASSWORD: Your Docker Hub password
 
-Real-time order updates
+EC2_HOST: Your EC2 public IP
 
+EC2_SSH_KEY: Your EC2 SSH private key
+
+3️⃣ Deploy with GitHub Actions
+
+Push changes to the main branch:
+```bash
+git add .
+git commit -m "Deploy update"
+git push origin main
+```
+
+The GitHub Actions workflow will automatically deploy to AWS.
