@@ -32,4 +32,12 @@ jobs:
       with:
         host: ${{ secrets.EC2_HOST }}
         username: ubuntu
+        key: ${{ secrets.EC2_SSH_KEY }}
+        script: |
+          mkdir -p ~/.ssh
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
+          docker stop backend-service || true
+          docker rm backend-service || true
+          docker pull ${{ secrets.DOCKER_USERNAME }}/backend-service:latest
+          docker run -d -p 8000:8000 --name backend-service ${{ secrets.DOCKER_USERNAME }}/backend-service:latest
        
