@@ -13,7 +13,7 @@ This project is a simple trading order management system built with FastAPI. It 
 ## 🚀 How to Run Locally
 ### ⬇ Clone and Install Dependencies
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/backend-service.git
+git clone https://github.com/yuxiao-ww/Trade-Order-Service.git
 cd backend
 pip install -r requirements.txt
 ```
@@ -56,7 +56,7 @@ Whenever you git push to main, GitHub Actions will:
 ## 🚀 Deployment Steps
 1️⃣ Setup AWS EC2
 
-Launch an Ubuntu 20.04 instance
+Launch an Ubuntu 24.04 instance
 
 Install Docker:
 ```bash
@@ -67,10 +67,10 @@ sudo apt update && sudo apt install -y docker.io
 
 Add GitHub Secrets:
 
-- DOCKER_USERNAME: Your Docker Hub username
-- DOCKER_PASSWORD: Your Docker Hub password
-- EC2_HOST: Your EC2 public IP
-- EC2_SSH_KEY: Your EC2 SSH private key
+- DOCKER_USERNAME: lulu0424
+- DOCKER_PASSWORD: ******(Ask author)
+- EC2_HOST: ******(Ask author)
+- EC2_SSH_KEY: ******(Ask author)
 
 3️⃣ Deploy with GitHub Actions
 
