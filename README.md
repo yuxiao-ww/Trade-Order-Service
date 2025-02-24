@@ -1,21 +1,17 @@
-🚀 Trade Order Service (FastAPI + WebSocket)
+# 🚀 Trade Order Service (FastAPI + WebSocket)
 
 This project is a simple trading order management system built with FastAPI. It supports RESTful APIs for order submission and retrieval, and real-time order updates via WebSocket.
 
-📌 Features
+## 📌 Features
 
-📝 REST API: Submit & fetch trade orders (POST /orders, GET /orders)
+- 📝 **REST API**: Submit & fetch trade orders (`POST /orders`, `GET /orders`)
+- 🔄 **WebSocket Support**: Real-time order status updates (`ws://<server>/ws`)
+- 🗃 **Database**: SQLite (for simplicity)
+- 🐳 **Containerized**: Dockerfile for easy deployment
+- ☁ **AWS Deployment**: Automated CI/CD pipeline using GitHub Actions
 
-🔄 WebSocket Support: Real-time order status updates (ws://<server>/ws)
-
-💃 Database: SQLite (for simplicity)
-
-💣 Containerized: Dockerfile for easy deployment
-
-☁ AWS Deployment: Automated CI/CD pipeline using GitHub Actions
-
-🚀 How to Run Locally
-
+## 🚀 How to Run Locally
+```bash
 git clone https://github.com/YOUR_GITHUB_USERNAME/backend-service.git
 cd backend-service
 pip install -r requirements.txt
