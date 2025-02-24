@@ -9,7 +9,6 @@ app.include_router(order_router)
 app.include_router(websocket_router)
 
 
-# 直接注册 WebSocket 端点
 @app.websocket("/ws")
 async def websocket_endpoint(websocket: WebSocket):
     await websocket.accept()
