@@ -16,7 +16,7 @@ git clone https://github.com/YOUR_GITHUB_USERNAME/backend-service.git
 cd backend-service
 pip install -r requirements.txt
 uvicorn backend.main:app --reload
-```bash
+```
 
 Swagger UI: http://localhost:8000/docs
 
