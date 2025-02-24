@@ -67,13 +67,10 @@ sudo apt update && sudo apt install -y docker.io
 
 Add GitHub Secrets:
 
-DOCKER_USERNAME: Your Docker Hub username
-
-DOCKER_PASSWORD: Your Docker Hub password
-
-EC2_HOST: Your EC2 public IP
-
-EC2_SSH_KEY: Your EC2 SSH private key
+- DOCKER_USERNAME: Your Docker Hub username
+- DOCKER_PASSWORD: Your Docker Hub password
+- EC2_HOST: Your EC2 public IP
+- EC2_SSH_KEY: Your EC2 SSH private key
 
 3️⃣ Deploy with GitHub Actions
 
