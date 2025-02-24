@@ -6,7 +6,6 @@ from .schemas import OrderCreate
 
 router = APIRouter()
 
-# 初始化数据库
 init_db()
 
 
@@ -16,7 +15,7 @@ def get_db():
     try:
         yield db  # Provide a session
     finally:
-        db.close()  # Close session after use
+        db.close()
 
 
 # submit a new order
